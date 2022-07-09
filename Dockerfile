@@ -25,6 +25,7 @@ EXPOSE 24454/udp
 # Server Files
 ADD eula.txt /
 ADD server.properties /
+ADD server-icon.png /
 ADD ops.json /
 
 # Start Command
