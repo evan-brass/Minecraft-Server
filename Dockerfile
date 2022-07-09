@@ -13,7 +13,8 @@ EXPOSE 25565
 ADD https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.11.0/fabric-installer-0.11.0.jar /
 RUN ["java", "-jar", "fabric-installer-0.11.0.jar", "server"]
 
-# Performance mods
+# Mods:
+ADD https://mediafiles.forgecdn.net/files/3851/965/fabric-api-0.57.0%2B1.19.jar /mods/
 ADD https://mediafiles.forgecdn.net/files/3825/272/lithium-fabric-mc1.19-0.8.0.jar /mods/
 ADD https://mediafiles.forgecdn.net/files/3832/74/phosphor-fabric-mc1.19.x-0.8.1.jar /mods/
 ADD https://mediafiles.forgecdn.net/files/3865/34/fabric-chunkpregen-0.3.5.jar /mods/
