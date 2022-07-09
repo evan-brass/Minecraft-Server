@@ -16,6 +16,7 @@ RUN ["java", "-jar", "fabric-installer-0.11.0.jar", "server"]
 # Performance mods
 ADD https://mediafiles.forgecdn.net/files/3825/272/lithium-fabric-mc1.19-0.8.0.jar /mods/
 ADD https://mediafiles.forgecdn.net/files/3832/74/phosphor-fabric-mc1.19.x-0.8.1.jar /mods/
+ADD https://mediafiles.forgecdn.net/files/3865/34/fabric-chunkpregen-0.3.5.jar /mods/
 
 # Simple Voice Chat
 ADD https://mediafiles.forgecdn.net/files/3864/158/voicechat-fabric-1.19-2.2.49.jar /mods/
