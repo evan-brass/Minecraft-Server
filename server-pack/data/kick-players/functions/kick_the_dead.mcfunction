@@ -1,0 +1,1 @@
+kick @a[gamemode=spectator] "You Died. Reconnect to start a new life."
