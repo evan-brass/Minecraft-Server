@@ -1,0 +1,47 @@
+#cloud-config
+
+write_files:
+- path: /etc/systemd/system/firewall-minecraft.service
+  permissions: 0644
+  owner: root
+  content: |
+    [Unit]
+    Description=Open the tcp port used by Minecraft.
+
+    [Service]
+    Type=oneshot
+    RemainAfterExit=true
+    ExecStart=/sbin/iptables -A INPUT -p tcp --dport 25565 -j ACCEPT
+- path: /etc/systemd/system/firewall-voice.service
+  permissions: 0644
+  owner: root
+  content: |
+    [Unit]
+    Description=Open the udp port used by the Simple Voice Chat mod.
+
+    [Service]
+    Type=oneshot
+    RemainAfterExit=true
+    ExecStart=/sbin/iptables -A INPUT -p udp --dport 24454 -j ACCEPT
+- path: /etc/systemd/system/minecraft.service
+  permissions: 0644
+  owner: root
+  content: |
+    [Unit]
+    Description=Minecraft Server
+    Requires=firewall-minecraft.service
+    Requires=firewall-voice.service
+
+    [Service]
+    Restart=always
+    ExecStart=/usr/bin/docker run --rm --name=%n -v /mnt/disks/world:/world --net=host minecraft
+    ExecStop=-/usr/bin/docker exec %n -s quit
+
+runcmd:
+- systemctl daemon-reload
+- systemctl start minecraft.service
+
+bootcmd:
+- fsck.ext4 -tvy /dev/sdb
+- mkdir /mnt/disks/world
+- mount -t ext4 -o discard,defaults /dev/sdb /mnt/disks/world
