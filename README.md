@@ -1,5 +1,7 @@
 # Minecraft 1.19.1
 - Server Address: `mc.evan-brass.net`
+- Ultra-hardcode: Natural Health regen is turned off (use Gapples)
+  - If you die, log out and back in to start a new life.
 - Whitelist not enforced
 - Hosted: US-west1-b (Oregon)
 - Server Specs: google compute e2-medium (4GB mem, 2vcpu, 10G SSD for chunk data)
