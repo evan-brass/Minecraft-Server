@@ -25,9 +25,6 @@ ADD https://mediafiles.forgecdn.net/files/3902/630/flan-1.19-1.8.0-fabric.jar /m
 ADD https://mediafiles.forgecdn.net/files/3902/398/voicechat-fabric-1.19.1-2.2.52.jar /mods/
 EXPOSE 24454/udp
 
-# Datapacks
-ADD server-pack /world/datapacks/server-pack
-
 # Server Files
 ADD eula.txt /
 ADD server.properties /
