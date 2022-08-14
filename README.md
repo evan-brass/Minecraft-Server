@@ -1,4 +1,4 @@
-# Minecraft 1.19.1
+# Minecraft 1.19.2
 - Server Address: `mc.evan-brass.net`
 - Ultra-hardcode: Natural Health regen is turned off (use Gapples)
   - If you die, log out and back in to start a new life.
